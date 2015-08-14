@@ -1,0 +1,1 @@
+TimePST:date::HH:mm a,TemperatureC:real,DewPointC:real,Humidity:Integer,SeaLevelPressurehPa:real,VisibilityKm:real,WindDirection:string,WindSpeedKmH:string,GustSpeedKmH:string,Precipitationmm:string,Events:string,Conditions:string,WindDirDegrees:real,DateUTC:date::yyyy-MM-dd HH:mm:ss

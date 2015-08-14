@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Functions>
+    <Function appliesTo="column" name="count" returnType="Long">
+        <Implementations>            
+            <Implementation modifier="instance" dialect="default" nativeCode="count"/>
+        </Implementations>
+        <Parameters>
+            <Parameter name="expr" permittedDataTypes="Boolean|Byte|String|Integer|Long|Real|Date"/>  
+        </Parameters>
+        <!-- Add constarints to the parameters, and the return value. like pre/ post conditions-->     
+        <!--The default java code of the function, a single chain of function calls, preferably one function.--> 
+    </Function>
+    <Function appliesTo="column" name="sum" returnType="Real">
+        <Implementations>            
+            <Implementation modifier="instance" dialect="default" nativeCode="sum" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="expr" permittedDataTypes="Byte|Integer|Long|Real"/>
+        </Parameters>
+    </Function>
+    <Function appliesTo="column" name="avg" returnType="Real">
+        <Implementations>            
+            <Implementation modifier="instance" dialect="default" nativeCode="avg" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="expr" permittedDataTypes="Byte|Integer|Long|Real"/>
+        </Parameters>
+    </Function>
+    <Function appliesTo="column" name="min" returnType="Real">
+        <Implementations>            
+            <Implementation modifier="instance" dialect="default" nativeCode="min" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="expr" permittedDataTypes="Byte|Integer|Long|Real"/>
+        </Parameters>
+    </Function>
+    <Function appliesTo="column" name="max" returnType="Real">
+        <Implementations>            
+            <Implementation modifier="instance" dialect="default" nativeCode="max" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="expr" permittedDataTypes="Byte|Integer|Long|Real"/>
+        </Parameters>
+    </Function>
+    <Function appliesTo="column" name="stdev" returnType="Real">
+        <Implementations>            
+            <Implementation modifier="instance" dialect="MSSQL" nativeCode="stdev" />
+            <Implementation modifier="instance" dialect="PostgreSQL" nativeCode="stddev" />
+            <Implementation modifier="instance" dialect="MySQL" nativeCode="std" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="expr" permittedDataTypes="Byte|Integer|Long|Real"/>
+        </Parameters>
+    </Function>
+</Functions>

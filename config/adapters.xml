@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Adapters>
+    <Adapter>
+        <Id>CSV</Id>
+        <IsFallback>0</IsFallback>
+        <Location>/xqt.adapters.csv-1.0-SNAPSHOT.jar</Location>
+        <LocationType>file</LocationType>
+        <ClassName>CsvDataAdapter</ClassName>
+        <Namespace>xqt.adapters.csv</Namespace>
+    </Adapter>
+    <Adapter>
+        <Id>DEFAULT</Id>
+        <IsFallback>1</IsFallback>
+        <Location>/xqt.adapters.default-1.0-SNAPSHOT.jar</Location>
+        <LocationType>file</LocationType>
+        <ClassName>DefaultDataAdapter</ClassName>
+        <Namespace>xqt.adapters.builtin</Namespace>
+    </Adapter>
+    <Adapter>
+        <Id>DBMS</Id>
+        <IsFallback>0</IsFallback>
+        <Location>/xqt.adapters.dbms-1.0-SNAPSHOT.jar</Location>
+        <LocationType>file</LocationType>
+        <ClassName>DbmsDataAdapter</ClassName>
+        <Namespace>xqt.adapters.dbms</Namespace>
+    </Adapter>
+</Adapters>

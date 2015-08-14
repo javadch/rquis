@@ -1,0 +1,6 @@
+fk:Integer,longitude:Real,latitude:float,elevation:Real,temperature:Real,soilNi:Real,id:Integer,description:String
+1,5420725.53,5868955.99,90.00,36,50,7279525,this is a row
+1,5420725.47,5868956.19,91.00,45,50,7279526,"Hello", hi said
+3,5420725.28,5868956.99,92.00,36,52,7279530,text
+5,5420725.23,5868957.19,80.00,47,51,7279531, " text with space " is here
+6,5420725.17,5868957.4,92.00,24,51,7279532, gg

@@ -11,3 +11,10 @@
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf
+
+.RData
+
+temp
+logs
+man
+.Rproj.user
