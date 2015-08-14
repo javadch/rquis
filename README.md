@@ -1,2 +1,2 @@
 # RQt
-R Package that enables access to XQt APIs
+R Package that enables access to the XQt APIs
