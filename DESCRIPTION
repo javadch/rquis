@@ -1,6 +1,6 @@
 Package: RQt
 Title: R Interface to XQt Language for Unified Data Processing
-Version: 0.1
+Version: 0.1.0
 Authors@R: c(
     person("Javad", "Chamanara", email = "chamanara@gmail.com", role = c("aut", "cre")),
     person("Clayton", "Yochum", email = "claytonjy@gmail.com", role = c("aut")),
