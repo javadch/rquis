@@ -1,22 +1,22 @@
-CONNECTION cnn1 ADAPTER=CSV SOURCE_URI="data\\" PARAMETERS=delimiter:comma, fileExtension:csv, firstRowIsHeader:true, externalHeader:true
+CONNECTION cnn1 ADAPTER=CSV SOURCE_URI="extdata\\" PARAMETERS=delimiter:comma, fileExtension:csv, firstRowIsHeader:true, externalHeader:true
 
-BIND b1 CONNECTION=cnn1 SCOPE=data_10_time, fso2014h, xdata_10, mydata1 
+BIND b1 CONNECTION=cnn1 SCOPE=data_10_time, fso2014h, xdata_10, mydata1
 
 // there is an outleir in the data that should be fitered out. The refered filed is not in the perspective
-SELECT USING INLINE avg(TemperatureC) AS meanTemp, dt.dayofYear(DateUTC) as dayIndex FROM b1.1 
-INTO result1 
-WHERE  (TemperatureC <> -9999) 
+SELECT USING INLINE avg(TemperatureC) AS meanTemp, dt.dayofYear(DateUTC) as dayIndex FROM b1.1
+INTO result1
+WHERE  (TemperatureC <> -9999)
 ORDER BY dayIndex
 
 //SELECT FROM result1
-//INTO PLOT fsoPlot1 hax:dayIndex v-axis:meanTemp pt:l hl:"Day of Year" vl:"Mean Temperature (C)" pl:"Daily Mean Temperature at SFO in 2014"  
+//INTO PLOT fsoPlot1 hax:dayIndex v-axis:meanTemp pt:l hl:"Day of Year" vl:"Mean Temperature (C)" pl:"Daily Mean Temperature at SFO in 2014"
 
 // It is possible to combine both the queries into one by fusing the target clause
 
 /*
 SELECT USING INLINE avg(TemperatureC) AS meanTemp, dt.dayofYear(DateUTC) as dayIndex FROM b1.1
 //INTO temp1
-INTO PLOT fsoPlot2 hax:dayIndex v-axis:meanTemp pt:l hl:"Day of Year" vl:"Mean Temperature (C)" pl:"Daily Mean Temperature at SFO in 2014"  
+INTO PLOT fsoPlot2 hax:dayIndex v-axis:meanTemp pt:l hl:"Day of Year" vl:"Mean Temperature (C)" pl:"Daily Mean Temperature at SFO in 2014"
 WHERE  (TemperatureC <> -9999)//(dayIndex < 11)
 ORDER BY dayIndex
 */
