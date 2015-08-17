@@ -2,7 +2,7 @@ library(RQt)
 t <- rqt.versionInfo()
 n <- rqt.appName()
 
-cnnString <- "CONNECTION cnn1 ADAPTER=CSV SOURCE_URI='extdata\\\\' 
+cnnString <- "CONNECTION cnn1 ADAPTER=CSV SOURCE_URI='inst\\\\extdata\\\\' 
 PARAMETERS=delimiter:comma, fileExtension:csv, firstRowIsHeader:true"
 bindingString <- "BIND b1 CONNECTION=cnn1 SCOPE=xdata_10, mydata1"
 st1String <- "SELECT FROM b1.0 INTO var3"
@@ -23,9 +23,3 @@ err2 <- rqt.getRunReport(engine2)
 #View(err2)
 var3 <- rqt.getVariable(engine2, "var3")
 var4 <- rqt.getVariable(engine2, "var4")
-
-script <- "foo
-bar"
-script
-
-process
