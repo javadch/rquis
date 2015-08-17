@@ -13,7 +13,8 @@ rqt.getProcess(engine)
 the process submitted to the engine
 }
 \description{
-\code{rqt.getProcess} Returns the process that is submitted to the engine either using \code{rqt.addScript} or \code{rqt.loadProcess}.
+\code{rqt.getProcess} Returns the process that was submitted to an engine
+using \code{rqt.addScript} or \code{rqt.loadProcess}.
 }
 \examples{
 engine1 <- rqt.getEngine()

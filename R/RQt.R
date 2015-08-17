@@ -94,13 +94,15 @@ rqt.getAdapterNames <- function(engine){
 #' @return the added script is returned. Usually the return value is not needed, but in case of debugging it may be useful.
 #' @examples
 #' engine1 <- rqt.getEngine()
-#' addedScript <- rqt.addScript(engine1, "CONNECTION cnn1 ADAPTER=CSV SOURCE_URI='extdata\\\\' 
-#' PARAMETERS=delimiter:comma, fileExtension:csv, firstRowIsHeader:true")
+#' script <- "CONNECTION cnn1 ADAPTER=CSV SOURCE_URI='extdata\\\\'
+#' PARAMETERS=delimiter:comma, fileExtension:csv, firstRowIsHeader:true"
+#' addedScript <- rqt.addScript(engine1, script)
 #'
 #' \dontrun{
 #' engine1 <- rqt.getEngine()
-#' addedScript <- rqt.addScript(engine1, "CONNECTION cnn1 ADAPTER=CSV SOURCE_URI='extdata\\\\' 
-#' PARAMETERS=delimiter:comma, fileExtension:csv, firstRowIsHeader:true")
+#' script <- "CONNECTION cnn1 ADAPTER=CSV SOURCE_URI='extdata\\\\'
+#' PARAMETERS=delimiter:comma, fileExtension:csv, firstRowIsHeader:true"
+#' addedScript <- rqt.addScript(engine1, script)
 #' }
 #'
 #' @export
@@ -133,7 +135,8 @@ rqt.loadProcess <- function(engine, fileName){
 
 #' Returns the process.
 #'
-#' \code{rqt.getProcess} Returns the process that is submitted to the engine either using \code{rqt.addScript} or \code{rqt.loadProcess}.
+#' \code{rqt.getProcess} Returns the process that was submitted to an engine
+#' using \code{rqt.addScript} or \code{rqt.loadProcess}.
 #'
 #' @param engine the engine instance created by \code{rqt.getEngine}
 #' @return the process submitted to the engine
