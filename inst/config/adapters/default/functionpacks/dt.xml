@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Functions>
+    <Function appliesTo="value" name="year" returnType="Integer">
+        <Implementations>            
+            <Implementation modifier="static" jar="" namespace="xqt.adapters.builtin.functions" class="DateAndTime" method="yearOf" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="input" permittedDataTypes="Date">
+            </Parameter>
+        </Parameters>
+    </Function>
+    <Function appliesTo="value" name="month" returnType="Integer">
+        <Implementations>            
+            <Implementation modifier="static" jar="" namespace="xqt.adapters.builtin.functions" class="DateAndTime" method="monthOf" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="input" permittedDataTypes="Date">
+            </Parameter>
+        </Parameters>
+    </Function>
+    <Function appliesTo="value" name="dayOfYear" returnType="Integer">
+        <Implementations>            
+            <Implementation modifier="static" jar="" namespace="xqt.adapters.builtin.functions" class="DateAndTime" method="dayOfYearOf" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="input" permittedDataTypes="Date">
+            </Parameter>
+        </Parameters>
+    </Function>
+    <Function appliesTo="value" name="monthName" returnType="String">
+        <Implementations>            
+            <Implementation modifier="static" jar="" namespace="xqt.adapters.builtin.functions" class="DateAndTime" method="monthNameOf" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="input" permittedDataTypes="Date">
+            </Parameter>
+        </Parameters>
+    </Function>
+    
+    <Function appliesTo="value" name="hour" returnType="Integer">
+        <Implementations>            
+            <Implementation modifier="static" jar="" namespace="xqt.adapters.builtin.functions" class="DateAndTime" method="hourOf" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="input" permittedDataTypes="Date">
+            </Parameter>
+        </Parameters>
+    </Function>
+
+    <Function appliesTo="value" name="minute" returnType="Integer">
+        <Implementations>            
+            <Implementation modifier="static" jar="" namespace="xqt.adapters.builtin.functions" class="DateAndTime" method="minuteOf" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="input" permittedDataTypes="Date">
+            </Parameter>
+        </Parameters>
+    </Function>
+
+    <Function appliesTo="value" name="second" returnType="Integer">
+        <Implementations>            
+            <Implementation modifier="static" jar="" namespace="xqt.adapters.builtin.functions" class="DateAndTime" method="secondOf" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="input" permittedDataTypes="Date">
+            </Parameter>
+        </Parameters>
+    </Function>
+
+</Functions>
