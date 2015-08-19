@@ -5,7 +5,7 @@ library(plyr)
 
 engine <- rqt.getEngine()
 
-file <- system.file("Examples/processes", "ex1.xqt", package="RQt")
+file <- system.file("extdata", "ex1.xqt", package="RQt")
 ld <- rqt.loadProcess(engine, file)
 
 rn <- rqt.runProcess(engine)
