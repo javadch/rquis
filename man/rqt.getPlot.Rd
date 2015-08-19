@@ -18,15 +18,16 @@ An image of type JPeg as rendered by the corrsponding query in the submitted pro
 \code{rqt.getVariable} Gets the visual result set, pointed to by a variable, as an image.
 }
 \examples{
-engine1 <- rqt.getEngine()
-addedScript <- rqt.loadProcess(engine1, "Examples\\\\processes\\\\ex2.xqt")
-rqt.runProcess(engine1)
-dlm <- rqt.getPlot(engine1, "p2")
+#engine1 <- rqt.getEngine()
+#rqt.loadProcess(engine1, system.file("Examples/processes", "ex2.xqt", package="RQt"))
+#rqt.runProcess(engine1)
+#dlm <- rqt.getPlot(engine1, "p2")
 \dontrun{
-engine1 <- rqt.getEngine()
-addedScript <- rqt.loadProcess(engine1, "Examples\\\\processes\\\\ex2.xqt")
-rqt.runProcess(engine1)
-dlm <- rqt.getPlot(engine1, "p2")
+#engine1 <- rqt.getEngine()
+#addedScript <- rqt.loadProcess(engine1,
+system.file("Examples/processes", "ex2.xqt", package="RQt"))
+#rqt.runProcess(engine1)
+#dlm <- rqt.getPlot(engine1, "p2")
 }
 }
 

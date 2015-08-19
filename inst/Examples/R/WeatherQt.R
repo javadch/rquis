@@ -5,13 +5,13 @@ library(plyr)
 
 engine <- rqt.getEngine()
 
-ld <- rqt.loadProcess(engine, "Examples\\processes\\ex2.xqt")
+file <- system.file("Examples/processes", "ex1.xqt", package="RQt")
+ld <- rqt.loadProcess(engine, file)
 
 rn <- rqt.runProcess(engine)
 err <- rqt.getRunReport(engine)
 
-
-fsoData <- rqt.getVariable(engine, "result1")
+fsoData <- rqt.getVariable(engine, "meanDailyTemp")
 
 ggplot(fsoData, aes(dayindex, meantemp)) + geom_line() +
  xlab("") + ylab("Mean Temp deg C") +

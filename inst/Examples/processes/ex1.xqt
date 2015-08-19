@@ -1,0 +1,11 @@
+CONNECTION cnn1 ADAPTER=CSV SOURCE_URI='inst\\extdata\\' PARAMETERS=delimiter:comma, fileExtension:csv, firstRowIsHeader:true, externalHeader:true
+
+BIND b1 CONNECTION=cnn1 SCOPE=data_10_time, fso2014h, xdata_10, mydata1
+
+//SELECT FROM b1.1 INTO result1
+// there is an outlier in the data that should be filtered out. The referred field is not in the perspective
+SELECT USING INLINE avg(TemperatureC) AS meanTemp, dt.dayofYear(DateUTC) as dayIndex FROM b1.1
+INTO meanDailyTemp
+WHERE  (TemperatureC <> -9999)
+ORDER BY dayIndex
+
