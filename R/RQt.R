@@ -52,7 +52,7 @@ rqt.appName <- function(){
 #'
 #' @export
 rqt.getEngine <- function(){
-  getEngineReturnValue <- .jnew("xqt/api/LanguageServicePoint")
+  getEngineReturnValue <- .jnew("xqt/api/LanguageServicePoint", "RQt, RQt\\inst, inst")
   return(getEngineReturnValue)
 }
 
@@ -120,11 +120,11 @@ rqt.addScript <- function(engine, statement){
 #' @return the content of the file loaded
 #' @examples
 #' engine1 <- rqt.getEngine()
-#' addedScript <- rqt.loadProcess(engine1, "Examples\\processes\\ex2.xqt")
+#' addedScript <- rqt.loadProcess(engine1, system.file("Examples/processes", "ex2.xqt", package="RQt"))
 #'
 #' \dontrun{
 #' engine1 <- rqt.getEngine()
-#' addedScript <- rqt.loadProcess(engine1, "Examples\\processes\\ex2.xqt")
+#' addedScript <- rqt.loadProcess(engine1, system.file("Examples/processes", "ex2.xqt", package="RQt"))
 #' }
 #'
 #' @export
@@ -142,12 +142,12 @@ rqt.loadProcess <- function(engine, fileName){
 #' @return the process submitted to the engine
 #' @examples
 #' engine1 <- rqt.getEngine()
-#' addedScript <- rqt.loadProcess(engine1, "Examples\\processes\\ex2.xqt")
+#' addedScript <- rqt.loadProcess(engine1, system.file("Examples/processes", "ex2.xqt", package="RQt"))
 #' process <- rqt.getProcess(engine1)
 #'
 #' \dontrun{
 #' engine1 <- rqt.getEngine()
-#' addedScript <- rqt.loadProcess(engine1, "Examples\\processes\\ex2.xqt")
+#' addedScript <- rqt.loadProcess(engine1, system.file("Examples/processes", "ex2.xqt", package="RQt"))
 #' process <- rqt.getProcess(engine1)
 #' }
 #'
@@ -166,12 +166,12 @@ rqt.getProcess <- function(engine){
 #' The result set of submitted queries are not returned automatically. They should be requested for using \code{rqt.getVariabe}
 #' @examples
 #' engine1 <- rqt.getEngine()
-#' addedScript <- rqt.loadProcess(engine1, "Examples\\processes\\ex2.xqt")
+#' addedScript <- rqt.loadProcess(engine1, system.file("Examples/processes", "ex2.xqt", package="RQt"))
 #' rqt.runProcess(engine1)
 #'
 #' \dontrun{
 #' engine1 <- rqt.getEngine()
-#' addedScript <- rqt.loadProcess(engine1, "Examples\\processes\\ex2.xqt")
+#' addedScript <- rqt.loadProcess(engine1, system.file("Examples/processes", "ex2.xqt", package="RQt"))
 #' rqt.runProcess(engine1)
 #' }
 #'
@@ -190,14 +190,17 @@ rqt.runProcess <- function(engine){
 #' @return A data frame equivalent to the result set of the corrsponding query as in the process.
 #' @examples
 #' engine1 <- rqt.getEngine()
-#' addedScript <- rqt.loadProcess(engine1, "Examples\\processes\\ex2.xqt")
+#' rqt.loadProcess(engine1, system.file("Examples/processes", "ex2.xqt", package="RQt"))
+#' rqt.getProcess(engine1)
 #' rqt.runProcess(engine1)
-#' dlm <- rqt.getVariable(engine1, "result1")
+#' dlm <- rqt.getVariable(engine1, "meanDailyTemp")
+#' 
 #' \dontrun{
 #' engine1 <- rqt.getEngine()
-#' addedScript <- rqt.loadProcess(engine1, "Examples\\processes\\ex2.xqt")
+#' rqt.loadProcess(engine1, system.file("Examples/processes", "ex2.xqt", package="RQt"))
+#' rqt.getProcess(engine1)
 #' rqt.runProcess(engine1)
-#' dlm <- rqt.getVariable(engine1, "result1")
+#' dlm <- rqt.getVariable(engine1, "meanDailyTemp")
 #' }
 #'
 #' @export
@@ -217,15 +220,16 @@ rqt.getVariable <- function(engine, variableName){
 #' @param plotName the plot name as used in the process as the target of a query.
 #' @return An image of type JPeg as rendered by the corrsponding query in the submitted process.
 #' @examples
-#' engine1 <- rqt.getEngine()
-#' addedScript <- rqt.loadProcess(engine1, "Examples\\processes\\ex2.xqt")
-#' rqt.runProcess(engine1)
-#' dlm <- rqt.getPlot(engine1, "p2")
+#' #engine1 <- rqt.getEngine()
+#' #rqt.loadProcess(engine1, system.file("Examples/processes", "ex2.xqt", package="RQt"))
+#' #rqt.runProcess(engine1)
+#' #dlm <- rqt.getPlot(engine1, "p2")
 #' \dontrun{
-#' engine1 <- rqt.getEngine()
-#' addedScript <- rqt.loadProcess(engine1, "Examples\\processes\\ex2.xqt")
-#' rqt.runProcess(engine1)
-#' dlm <- rqt.getPlot(engine1, "p2")
+#' #engine1 <- rqt.getEngine()
+#' #addedScript <- rqt.loadProcess(engine1, 
+#' system.file("Examples/processes", "ex2.xqt", package="RQt"))
+#' #rqt.runProcess(engine1)
+#' #dlm <- rqt.getPlot(engine1, "p2")
 #' }
 #'
 #' @export
@@ -238,7 +242,7 @@ rqt.getPlot <- function(engine, plotName){
   return (0)
 }
 
-#' Reports the execution.
+#' Reports the result of the execution.
 #'
 #' \code{rqt.getRunReport} Reports whether execution of the proceess has encountered any error.
 #'
@@ -246,12 +250,12 @@ rqt.getPlot <- function(engine, plotName){
 #' @return A verbose report explaining the execution of each statement including the execution time, result size, and errors.
 #' @examples
 #' engine1 <- rqt.getEngine()
-#' addedScript <- rqt.loadProcess(engine1, "Examples\\processes\\ex2.xqt")
+#' addedScript <- rqt.loadProcess(engine1, system.file("Examples/processes", "ex2.xqt", package="RQt"))
 #' rqt.runProcess(engine1)
 #' err <- rqt.getRunReport(engine1)
 #' \dontrun{
 #' engine1 <- rqt.getEngine()
-#' addedScript <- rqt.loadProcess(engine1, "Examples\\processes\\ex2.xqt")
+#' addedScript <- rqt.loadProcess(engine1, system.file("Examples/processes", "ex2.xqt", package="RQt"))
 #' rqt.runProcess(engine1)
 #' err <- rqt.getRunReport(engine1)
 #' }

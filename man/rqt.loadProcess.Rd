@@ -19,11 +19,11 @@ the content of the file loaded
 }
 \examples{
 engine1 <- rqt.getEngine()
-addedScript <- rqt.loadProcess(engine1, "Examples\\\\processes\\\\ex2.xqt")
+addedScript <- rqt.loadProcess(engine1, system.file("Examples/processes", "ex2.xqt", package="RQt"))
 
 \dontrun{
 engine1 <- rqt.getEngine()
-addedScript <- rqt.loadProcess(engine1, "Examples\\\\processes\\\\ex2.xqt")
+addedScript <- rqt.loadProcess(engine1, system.file("Examples/processes", "ex2.xqt", package="RQt"))
 }
 }
 

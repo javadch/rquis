@@ -19,14 +19,17 @@ A data frame equivalent to the result set of the corrsponding query as in the pr
 }
 \examples{
 engine1 <- rqt.getEngine()
-addedScript <- rqt.loadProcess(engine1, "Examples\\\\processes\\\\ex2.xqt")
+rqt.loadProcess(engine1, system.file("Examples/processes", "ex2.xqt", package="RQt"))
+rqt.getProcess(engine1)
 rqt.runProcess(engine1)
-dlm <- rqt.getVariable(engine1, "result1")
+dlm <- rqt.getVariable(engine1, "meanDailyTemp")
+
 \dontrun{
 engine1 <- rqt.getEngine()
-addedScript <- rqt.loadProcess(engine1, "Examples\\\\processes\\\\ex2.xqt")
+rqt.loadProcess(engine1, system.file("Examples/processes", "ex2.xqt", package="RQt"))
+rqt.getProcess(engine1)
 rqt.runProcess(engine1)
-dlm <- rqt.getVariable(engine1, "result1")
+dlm <- rqt.getVariable(engine1, "meanDailyTemp")
 }
 }
 
