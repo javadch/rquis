@@ -191,14 +191,12 @@ rqt.runProcess <- function(engine){
 #' @examples
 #' engine1 <- rqt.getEngine()
 #' rqt.loadProcess(engine1, system.file("Examples/processes", "ex2.xqt", package="RQt"))
-#' rqt.getProcess(engine1)
 #' rqt.runProcess(engine1)
 #' dlm <- rqt.getVariable(engine1, "meanDailyTemp")
 #' 
 #' \dontrun{
 #' engine1 <- rqt.getEngine()
 #' rqt.loadProcess(engine1, system.file("Examples/processes", "ex2.xqt", package="RQt"))
-#' rqt.getProcess(engine1)
 #' rqt.runProcess(engine1)
 #' dlm <- rqt.getVariable(engine1, "meanDailyTemp")
 #' }
@@ -212,42 +210,12 @@ rqt.getVariable <- function(engine, variableName){
   return(df)
 }
 
-#' Gets the visual resultset by variable name.
-#'
-#' \code{rqt.getVariable} Gets the visual result set, pointed to by a variable, as an image.
-#'
-#' @param engine the engine instance created by \code{rqt.getEngine}
-#' @param plotName the plot name as used in the process as the target of a query.
-#' @return An image of type JPeg as rendered by the corrsponding query in the submitted process.
-#' @examples
-#' #engine1 <- rqt.getEngine()
-#' #rqt.loadProcess(engine1, system.file("Examples/processes", "ex2.xqt", package="RQt"))
-#' #rqt.runProcess(engine1)
-#' #dlm <- rqt.getPlot(engine1, "p2")
-#' \dontrun{
-#' #engine1 <- rqt.getEngine()
-#' #addedScript <- rqt.loadProcess(engine1, 
-#' system.file("Examples/processes", "ex2.xqt", package="RQt"))
-#' #rqt.runProcess(engine1)
-#' #dlm <- rqt.getPlot(engine1, "p2")
-#' }
-#'
-#' @export
-rqt.getPlot <- function(engine, plotName){
-  #data <- .jcall(engine,"Ljava/lang/Object;","getVariable", plotName)
-  #df=as.data.frame(lapply(.jevalArray(data), .jevalArray))
-  #schema <- .jcall(engine,"Ljava/lang/Object;","getVariableSchema", variableName)
-  #names(df) = as.vector(.jevalArray(schema))
-  #return(df)
-  return (0)
-}
-
 #' Reports the result of the execution.
 #'
 #' \code{rqt.getRunReport} Reports whether execution of the proceess has encountered any error.
 #'
 #' @param engine the engine instance created by \code{rqt.getEngine}
-#' @return A verbose report explaining the execution of each statement including the execution time, result size, and errors.
+#' @return A verbose report explaining the execution of each statement including the overall execution time, result size, and errors.
 #' @examples
 #' engine1 <- rqt.getEngine()
 #' addedScript <- rqt.loadProcess(engine1, system.file("Examples/processes", "ex2.xqt", package="RQt"))
