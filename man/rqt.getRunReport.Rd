@@ -10,7 +10,7 @@ rqt.getRunReport(engine)
 \item{engine}{the engine instance created by \code{rqt.getEngine}}
 }
 \value{
-A verbose report explaining the execution of each statement including the execution time, result size, and errors.
+A verbose report explaining the execution of each statement including the overall execution time, result size, and errors.
 }
 \description{
 \code{rqt.getRunReport} Reports whether execution of the proceess has encountered any error.
