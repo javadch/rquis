@@ -18,12 +18,12 @@ using \code{rqt.addScript} or \code{rqt.loadProcess}.
 }
 \examples{
 engine1 <- rqt.getEngine()
-addedScript <- rqt.loadProcess(engine1, system.file("Examples/processes", "ex2.xqt", package="RQt"))
+addedScript <- rqt.loadProcess(engine1, system.file("extdata", "ex2.xqt", package="RQt"))
 process <- rqt.getProcess(engine1)
 
 \dontrun{
 engine1 <- rqt.getEngine()
-addedScript <- rqt.loadProcess(engine1, system.file("Examples/processes", "ex2.xqt", package="RQt"))
+addedScript <- rqt.loadProcess(engine1, system.file("extdata", "ex2.xqt", package="RQt"))
 process <- rqt.getProcess(engine1)
 }
 }
