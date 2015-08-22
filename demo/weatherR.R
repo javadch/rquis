@@ -2,7 +2,7 @@ library(ggplot2)
 library(scales)
 library(plyr)
 
-w2014 <- read.csv(file="data\\FSO2014_1.csv",head=TRUE,sep=",") # Hourly temperatures
+w2014 <- read.csv(file=system.file("extdata", "FSO2014_1.csv", package="RQt"),head=TRUE,sep=",") # Hourly temperatures
 w2014 <- w2014[w2014$TemperatureC !=-9999, ]
 
 w2014$shortdate <- strftime(w2014$DateUTC, format="%m-%d") # Extracts the date part only
