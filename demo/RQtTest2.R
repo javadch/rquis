@@ -2,7 +2,7 @@ library(RQt)
 t <- rqt.versionInfo()
 n <- rqt.appName()
 
-cnnString <- "CONNECTION cnn1 ADAPTER=CSV SOURCE_URI='extdata\\\\'
+cnnString <- "CONNECTION cnn1 ADAPTER=CSV SOURCE_URI='extdata//'
 PARAMETERS=delimiter:comma, fileExtension:csv, firstRowIsHeader:true"
 bindingString <- "BIND b1 CONNECTION=cnn1 SCOPE=xdata_10, mydata1"
 st1String <- "SELECT FROM b1.0 INTO var3"
