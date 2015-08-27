@@ -52,7 +52,7 @@ rqt.appName <- function(){
 #'
 #' @export
 rqt.getEngine <- function(){
-  getEngineReturnValue <- .jnew("xqt/api/LanguageServicePoint", "RQt, RQt\\inst, inst")
+  getEngineReturnValue <- .jnew("xqt/api/LanguageServicePoint", "RQt, RQt/inst, inst")
   return(getEngineReturnValue)
 }
 
@@ -94,13 +94,13 @@ rqt.getAdapterNames <- function(engine){
 #' @return the added script is returned. Usually the return value is not needed, but in case of debugging it may be useful.
 #' @examples
 #' engine1 <- rqt.getEngine()
-#' script <- "CONNECTION cnn1 ADAPTER=CSV SOURCE_URI='extdata\\\\'
+#' script <- "CONNECTION cnn1 ADAPTER=CSV SOURCE_URI='extdata/'
 #' PARAMETERS=delimiter:comma, fileExtension:csv, firstRowIsHeader:true"
 #' addedScript <- rqt.addScript(engine1, script)
 #'
 #' \dontrun{
 #' engine1 <- rqt.getEngine()
-#' script <- "CONNECTION cnn1 ADAPTER=CSV SOURCE_URI='extdata\\\\'
+#' script <- "CONNECTION cnn1 ADAPTER=CSV SOURCE_URI='extdata/'
 #' PARAMETERS=delimiter:comma, fileExtension:csv, firstRowIsHeader:true"
 #' addedScript <- rqt.addScript(engine1, script)
 #' }

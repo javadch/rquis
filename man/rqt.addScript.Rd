@@ -22,13 +22,13 @@ the added script is returned. Usually the return value is not needed, but in cas
 }
 \examples{
 engine1 <- rqt.getEngine()
-script <- "CONNECTION cnn1 ADAPTER=CSV SOURCE_URI='extdata\\\\\\\\'
+script <- "CONNECTION cnn1 ADAPTER=CSV SOURCE_URI='extdata/'
 PARAMETERS=delimiter:comma, fileExtension:csv, firstRowIsHeader:true"
 addedScript <- rqt.addScript(engine1, script)
 
 \dontrun{
 engine1 <- rqt.getEngine()
-script <- "CONNECTION cnn1 ADAPTER=CSV SOURCE_URI='extdata\\\\\\\\'
+script <- "CONNECTION cnn1 ADAPTER=CSV SOURCE_URI='extdata/'
 PARAMETERS=delimiter:comma, fileExtension:csv, firstRowIsHeader:true"
 addedScript <- rqt.addScript(engine1, script)
 }
