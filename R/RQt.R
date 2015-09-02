@@ -52,8 +52,16 @@ rqt.appName <- function(){
 #'
 #' @export
 rqt.getEngine <- function(){
-  getEngineReturnValue <- .jnew("xqt/api/LanguageServicePoint", "RQt, RQt/inst, inst")
-  return(getEngineReturnValue)
+  path <- find.package("RQt")
+  getEngineReturnValue <- .jnew("xqt/api/LanguageServicePoint", path, check=FALSE) #"RQt, RQt/inst, inst")
+  if (!is.null(e<-.jgetEx())){
+    #print("There was an error getting a query engine!")
+    .jcheck(silent=TRUE)
+    exp <- .jcall(e,"S","getMessage")
+    stop(exp)
+  } else {
+    return(getEngineReturnValue)
+  }
 }
 
 #' Retrieves the name of the registered adapters.
