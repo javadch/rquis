@@ -15,5 +15,5 @@ R Package that enables access to the XQt APIs
   9.1. Issue this command: demo(package ="RQt", RQtTest2)  
   9.2. Press Enter  
   9.3. Check your RStudio Global Enrvironment, it should contain var3 (5 obs. 7 vars.) and var4 (4 obs. 2 vars.)
-10. In case of issue, consult the log file in the logs folder of the package. Contact us if not fixed.
+10. In case of issues, consult the log file in the logs folder of the package. Contact us if not fixed.
 
