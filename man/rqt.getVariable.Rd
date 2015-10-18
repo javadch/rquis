@@ -9,7 +9,7 @@ rqt.getVariable(engine, variableName)
 \arguments{
 \item{engine}{the engine instance created by \code{rqt.getEngine}}
 
-\item{variableName}{the variable name tht is used as the target of a query in the process.}
+\item{variableName}{the variable name that is used as the target of a query in the process.}
 }
 \value{
 A data frame equivalent to the result set of the corrsponding query as in the process.

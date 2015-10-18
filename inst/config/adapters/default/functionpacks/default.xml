@@ -5,7 +5,7 @@
             <Implementation modifier="instance" jar="" namespace="xqt.model.functions.aggregates" class="Count" method="move" />
         </Implementations>
         <Parameters>
-            <Parameter name="expr" permittedDataTypes="Real|Long|Integer|Byte|Date|String"/>  
+            <Parameter name="expr" permittedDataTypes="String|Real|Long|Integer|Byte|Date"/>  
         </Parameters>
         <!-- Add constarints to the parameters, and the return value. like pre/ post conditions-->     
         <!--The default java code of the function, a single chain of function calls, preferably one function.--> 
