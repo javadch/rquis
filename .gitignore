@@ -17,3 +17,6 @@ vignettes/*.pdf
 temp
 logs
 .Rproj.user
+
+#GitEye project file
+.project

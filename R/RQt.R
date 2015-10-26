@@ -52,6 +52,7 @@ rqt.appName <- function(){
 #'
 #' @export
 rqt.getEngine <- function(){
+  #.jcall("java/lang/System", method = "gc") # ask JVM to collect garbages
   path <- find.package("RQt")
   getEngineReturnValue <- .jnew("xqt/api/LanguageServicePoint", path, check=FALSE) #"RQt, RQt/inst, inst")
   if (!is.null(e<-.jgetEx())){
@@ -189,12 +190,39 @@ rqt.runProcess <- function(engine){
   return(runProcessReturnValue)
 }
 
+#' Lists the name of the variables that contain tabular data.
+#'
+#' \code{rqt.listVariables} retrieves the name of the variables that contain tabular data.
+#'
+#' @param engine the engine instance created by \code{rqt.getEngine}
+#' @examples
+#' engine1 <- rqt.getEngine()
+#' rqt.loadProcess(engine1, system.file("extdata", "ex2.xqt", package="RQt"))
+#' rqt.runProcess(engine1)
+#' varNames <- rqt.listVariables(engine1)
+#'
+#' \dontrun{
+#' engine1 <- rqt.getEngine()
+#' rqt.loadProcess(engine1, system.file("extdata", "ex2.xqt", package="RQt"))
+#' rqt.runProcess(engine1)
+#' varNames <- rqt.listVariables(engine1)
+#' }
+#'
+#' @export
+rqt.listVariables <- function(engine){
+  varNames <- .jcall(engine,"Ljava/lang/Object;","getVariablesInfo")
+  if(is.null(varNames))
+    return (NULL)
+  varNameVector = as.vector(.jevalArray(varNames))
+  return (varNameVector)
+}
+
 #' Gets the resultset by variable name.
 #'
 #' \code{rqt.getVariable} Gets the result set, pointed to by a variable, as a data frame.
 #'
 #' @param engine the engine instance created by \code{rqt.getEngine}
-#' @param variableName the variable name tht is used as the target of a query in the process.
+#' @param variableName the variable name that is used as the target of a query in the process.
 #' @return A data frame equivalent to the result set of the corrsponding query as in the process.
 #' @examples
 #' engine1 <- rqt.getEngine()
@@ -211,10 +239,50 @@ rqt.runProcess <- function(engine){
 #'
 #' @export
 rqt.getVariable <- function(engine, variableName){
+  # check weather the variable exist
+  # check weather the variable conatins data
+  # try to get the data nad schema...
+  #exTime <- system.time({
   data <- .jcall(engine,"Ljava/lang/Object;","getVariable", variableName)
-  df=as.data.frame(lapply(.jevalArray(data), .jevalArray))
+  if(is.null(data))
+    return (NULL)
   schema <- .jcall(engine,"Ljava/lang/Object;","getVariableSchema", variableName)
-  names(df) = as.vector(.jevalArray(schema))
+  #})
+  #dfTime <- system.time({
+    df=as.data.frame(lapply(.jevalArray(data), .jevalArray))
+    names(df) = as.vector(.jevalArray(schema))
+  #})
+  return(df)
+}
+
+#' Gets the schema of a variable.
+#'
+#' \code{rqt.getVariableSchema} Gets the schema of a variable, as a data frame.
+#'
+#' @param engine the engine instance created by \code{rqt.getEngine}
+#' @param variableName the variable name.
+#' @param extended determine whether simple or semantically enhanced schema should be returned.
+#' @return A data frame that contains name, type, constaints, and semantic annotation of the attributes of the target variable's schema.
+#' @examples
+#' engine1 <- rqt.getEngine()
+#' rqt.loadProcess(engine1, system.file("extdata", "ex2.xqt", package="RQt"))
+#' rqt.runProcess(engine1)
+#' scm <- rqt.getVariableSchema(engine1, "meanDailyTemp")
+#'
+#' \dontrun{
+#' engine1 <- rqt.getEngine()
+#' rqt.loadProcess(engine1, system.file("extdata", "ex2.xqt", package="RQt"))
+#' rqt.runProcess(engine1)
+#' scm <- rqt.getVariableSchema(engine1, "meanDailyTemp")
+#' }
+#'
+#' @export
+rqt.getVariableSchema <- function(engine, variableName, extended = FALSE){
+  data <- .jcall(engine,"Ljava/lang/Object;","getPerspectiveFor", variableName)
+  df=as.data.frame(lapply(.jevalArray(data), .jevalArray))
+  #df <-  data.frame(x = 1:3, y = 5:7, z = 10:12, p = 20:22)
+  schema <- c("name", "type", "constraints", "annotation")
+  names(df) = as.vector(schema)
   return(df)
 }
 
@@ -241,4 +309,3 @@ rqt.getRunReport <- function(engine){
   getErrorsReturnValue <- .jcall(engine,"S","getErrors")
   return(getErrorsReturnValue)
 }
-
