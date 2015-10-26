@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Functions>
+    <Function appliesTo="value" name="indexof" returnType="Integer">
+        <Implementations>            
+            <Implementation modifier="static" jar="" namespace="xqt.adapters.builtin.functions" class="String" method="indexOf" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="s1" permittedDataTypes="String">
+            </Parameter>
+            <Parameter name="s2" permittedDataTypes="String">
+            </Parameter>            
+        </Parameters>
+    </Function>
+    <Function appliesTo="value" name="isdate" returnType="Boolean">
+        <Implementations>            
+            <Implementation modifier="static" jar="" namespace="xqt.adapters.builtin.functions" class="String" method="isDate" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="s" permittedDataTypes="String">
+            </Parameter>            
+        </Parameters>
+    </Function>
+    <Function appliesTo="value" name="isempty" returnType="Boolean">
+        <Implementations>            
+            <Implementation modifier="static" jar="" namespace="xqt.adapters.builtin.functions" class="String" method="isEmpty" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="s" permittedDataTypes="String">
+            </Parameter>
+        </Parameters>
+    </Function>
+    <Function appliesTo="value" name="isnumeric" returnType="Boolean">
+        <Implementations>            
+            <Implementation modifier="static" jar="" namespace="xqt.adapters.builtin.functions" class="String" method="isNumeric" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="s" permittedDataTypes="String">
+            </Parameter>
+        </Parameters>
+    </Function>
+    <Function appliesTo="value" name="lastindexof" returnType="Integer">
+        <Implementations>            
+            <Implementation modifier="static" jar="" namespace="xqt.adapters.builtin.functions" class="String" method="lastIndexOf" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="s1" permittedDataTypes="String">
+            </Parameter>
+            <Parameter name="s2" permittedDataTypes="String">
+            </Parameter>            
+        </Parameters>
+    </Function>
+    <Function appliesTo="value" name="length" returnType="Integer">
+        <Implementations>            
+            <Implementation modifier="static" jar="" namespace="xqt.adapters.builtin.functions" class="String" method="length" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="s" permittedDataTypes="String">
+            </Parameter>
+        </Parameters>
+    </Function>
+    <Function appliesTo="value" name="lower" returnType="String">
+        <Implementations>            
+            <Implementation modifier="static" jar="" namespace="xqt.adapters.builtin.functions" class="String" method="lower" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="s" permittedDataTypes="String">
+            </Parameter>
+        </Parameters>
+    </Function>
+    <Function appliesTo="value" name="ltrim" returnType="String">
+        <Implementations>            
+            <Implementation modifier="static" jar="" namespace="xqt.adapters.builtin.functions" class="String" method="ltrim" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="s" permittedDataTypes="String">
+            </Parameter>
+            <Parameter name="pattern" permittedDataTypes="String">
+            </Parameter>
+        </Parameters>
+    </Function>
+    <Function appliesTo="value" name="replace" returnType="String">
+        <Implementations>            
+            <Implementation modifier="static" jar="" namespace="xqt.adapters.builtin.functions" class="String" method="replace" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="source" permittedDataTypes="String">
+            </Parameter>
+            <Parameter name="target" permittedDataTypes="String">
+            </Parameter>
+            <Parameter name="replacement" permittedDataTypes="String">
+            </Parameter>
+        </Parameters>
+    </Function>
+    <Function appliesTo="value" name="reverse" returnType="String">
+        <Implementations>            
+            <Implementation modifier="static" jar="" namespace="xqt.adapters.builtin.functions" class="String" method="reverse" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="s" permittedDataTypes="String">
+            </Parameter>
+        </Parameters>
+    </Function>
+    <Function appliesTo="value" name="rtrim" returnType="String">
+        <Implementations>            
+            <Implementation modifier="static" jar="" namespace="xqt.adapters.builtin.functions" class="String" method="rtrim" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="s" permittedDataTypes="String">
+            </Parameter>
+            <Parameter name="pattern" permittedDataTypes="String">
+            </Parameter>
+        </Parameters>
+    </Function>
+    <Function appliesTo="value" name="substring" returnType="String">
+        <Implementations>            
+            <Implementation modifier="static" jar="" namespace="xqt.adapters.builtin.functions" class="String" method="substring" />
+        </Implementations>
+            <Parameters>
+            <Parameter name="s" permittedDataTypes="String">
+            </Parameter>
+            <Parameter name="beginIndex" permittedDataTypes="Integer">
+            </Parameter>
+            <Parameter name="endIndex" permittedDataTypes="Integer">
+            </Parameter>
+        </Parameters>
+    </Function>
+    <Function appliesTo="value" name="trim" returnType="String">
+        <Implementations>            
+            <Implementation modifier="static" jar="" namespace="xqt.adapters.builtin.functions" class="String" method="trim" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="s" permittedDataTypes="String">
+            </Parameter>
+            <Parameter name="pattern" permittedDataTypes="String">
+            </Parameter>
+        </Parameters>
+    </Function>
+    <Function appliesTo="value" name="format" returnType="String">
+        <Implementations>            
+            <Implementation modifier="static" jar="" namespace="xqt.adapters.builtin.functions" class="String" method="format" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="pattern" permittedDataTypes="String">
+            </Parameter>
+            <Parameter name="arguments" permittedDataTypes="Object" varArg="true">
+            </Parameter>
+        </Parameters>
+    </Function>
+    <Function appliesTo="value" name="upper" returnType="String">
+        <Implementations>            
+            <Implementation modifier="static" jar="" namespace="xqt.adapters.builtin.functions" class="String" method="upper" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="s" permittedDataTypes="String">
+            </Parameter>
+        </Parameters>
+    </Function>    
+    <Function appliesTo="value" name="toInteger" returnType="Integer">
+        <Implementations>            
+            <Implementation modifier="static" jar="" namespace="xqt.adapters.builtin.functions" class="String" method="toInteger" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="s" permittedDataTypes="String">
+            </Parameter>
+        </Parameters>
+    </Function>    
+    <Function appliesTo="value" name="toLong" returnType="Long">
+        <Implementations>            
+            <Implementation modifier="static" jar="" namespace="xqt.adapters.builtin.functions" class="String" method="toLong" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="s" permittedDataTypes="String">
+            </Parameter>
+        </Parameters>
+    </Function>    
+    <Function appliesTo="value" name="toReal" returnType="Real">
+        <Implementations>            
+            <Implementation modifier="static" jar="" namespace="xqt.adapters.builtin.functions" class="String" method="toDouble" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="s" permittedDataTypes="String">
+            </Parameter>
+        </Parameters>
+    </Function>    
+    <Function appliesTo="value" name="toBoolean" returnType="Boolean">
+        <Implementations>            
+            <Implementation modifier="static" jar="" namespace="xqt.adapters.builtin.functions" class="String" method="toBoolean" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="s" permittedDataTypes="String">
+            </Parameter>
+        </Parameters>
+    </Function>    
+    <Function appliesTo="value" name="toDate" returnType="Date">
+        <Implementations>            
+            <Implementation modifier="static" jar="" namespace="xqt.adapters.builtin.functions" class="String" method="toDate" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="s" permittedDataTypes="String">
+            </Parameter>
+            <Parameter name="format" permittedDataTypes="String">
+            </Parameter>
+        </Parameters>
+    </Function>    
+</Functions>

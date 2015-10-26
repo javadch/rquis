@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Functions>
+    <Function appliesTo="column" name="count" returnType="Long">
+        <Implementations>            
+            <Implementation modifier="instance" jar="" namespace="xqt.model.functions.aggregates" class="Count" method="move" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="expr" permittedDataTypes="String|Real|Long|Integer|Byte|Date"/>  
+        </Parameters>
+        <!-- Add constarints to the parameters, and the return value. like pre/ post conditions-->     
+        <!--The default java code of the function, a single chain of function calls, preferably one function.--> 
+    </Function>
+    <Function appliesTo="column" name="sum" returnType="Real">
+        <Implementations>            
+            <Implementation modifier="instance" jar="" namespace="xqt.model.functions.aggregates" class="Sum" method="move" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="expr" permittedDataTypes="Real|Long|Integer|Byte"/>
+        </Parameters>
+    </Function>
+    <Function appliesTo="column" name="avg" returnType="Real">
+        <Implementations>            
+            <Implementation modifier="instance" jar="" namespace="xqt.model.functions.aggregates" class="Average" method="move" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="expr" permittedDataTypes="Real|Long|Integer|Byte"/>
+        </Parameters>
+    </Function>
+    <Function appliesTo="column" name="mean" returnType="Real"> <!-- An overload of the avg function -->
+        <Implementations>            
+            <Implementation modifier="instance" jar="" namespace="xqt.model.functions.aggregates" class="Average" method="move" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="expr" permittedDataTypes="Real|Long|Integer|Byte"/>
+        </Parameters>
+    </Function>
+    <Function appliesTo="column" name="min" returnType="Real">
+        <Implementations>            
+            <Implementation modifier="instance" jar="" namespace="xqt.model.functions.aggregates" class="Minimum" method="move" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="expr" permittedDataTypes="Real|Long|Integer|Byte"/>
+        </Parameters>
+    </Function>
+    <Function appliesTo="column" name="max" returnType="Real">
+        <Implementations>            
+            <Implementation modifier="instance" jar="" namespace="xqt.model.functions.aggregates" class="Maximum" method="move" />
+        </Implementations>
+        <Parameters>
+            <Parameter name="expr" permittedDataTypes="Real|Long|Integer|Byte"/>
+        </Parameters>
+    </Function>
+</Functions>

@@ -2,10 +2,16 @@ library(RQt)
 t <- rqt.versionInfo()
 n <- rqt.appName()
 
-cnnString <- "CONNECTION cnn1 ADAPTER=CSV SOURCE_URI='Data\\\\' PARAMETERS=delimiter:comma, fileExtension:csv, firstRowIsHeader:true"
+dir <- file.path(find.package("RQt"), "extdata/", "")
+cnnString <- "CONNECTION cnn1 ADAPTER=CSV SOURCE_URI='%s'
+PARAMETERS=delimiter:comma, fileExtension:csv, firstRowIsHeader:true"
+
+cnnString <- sprintf(cnnString, dir)
+
 bindingString <- "BIND b1 CONNECTION=cnn1 SCOPE=xdata_10, mydata1"
 st1String <- "SELECT FROM b1.0 INTO var3"
-st2String <- "SELECT USING INLINE avg(temperature) AS meanT, soilni as soilCategory FROM b1.0 INTO var4 ORDER BY meanT"
+st2String <- "SELECT USING INLINE avg(temperature) AS meanT, soilni
+as soilCategory FROM b1.0 INTO var4 ORDER BY meanT"
 
 engine2 <- rqt.getEngine()
 
