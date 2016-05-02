@@ -1,5 +1,5 @@
-# RQt
-R Package that enables access to the XQt APIs
+# RQUIS
+R Package that enables access to the QUIS APIs
 
 
 1. Install JRE 8
