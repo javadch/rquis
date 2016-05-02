@@ -20,5 +20,5 @@ R Package that enables access to the [QUIS](https://github.com/javadch/xqt) APIs
 2. Use the docker server image (uses RStudio Server)
 	1.  Install Docker Machine for your OS
   	2. run: docker pull javadch/rquis:server
-  	3. run: docker run -d -p 8787:8787 javadch/rquis:server
+  	3. run: docker run -d -p 8787:8787 e- root=TRUE javadch/rquis:server
   	4. For RStudio customized settings consult [this document](https://github.com/rocker-org/rocker/wiki/Using-the-RStudio-image)
