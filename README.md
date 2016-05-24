@@ -11,7 +11,7 @@ R Package that enables access to the [QUIS](https://github.com/javadch/xqt) APIs
   	5. Install RStuido 0.99.484 or upper (optional)
   	6. Install dev.tools (may need installing its prerequisites.)
   	7. Install rJava
-  	8. From RStudio/R issue this command: devtools::install_github("JavadCh/RQt", ref="develop", force="TRUE")
+  	8. From RStudio/R issue this command: devtools::install_github("JavadCh/RQUIS", ref="dev", force="TRUE")
   	9. To test the installation:  
     	1. Issue this command: demo(package ="RQUIS", Test1)  
     	2. Press Enter  
