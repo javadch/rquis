@@ -13,7 +13,7 @@ R Package that enables access to the [QUIS](https://github.com/javadch/xqt) APIs
   	7. Install rJava
   	8. From RStudio/R issue this command: devtools::install_github("JavadCh/RQt", ref="develop", force="TRUE")
   	9. To test the installation:  
-    	1. Issue this command: demo(package ="RQt", RQtTest2)  
+    	1. Issue this command: demo(package ="RQUIS", Test1)  
     	2. Press Enter  
     	3. Check your RStudio Global Enrvironment, it should contain var3 (5 obs. 7 vars.) and var4 (4 obs. 2 vars.)
   	10. In case of issues, consult the log file in the logs folder of the package. Contact us if not fixed.

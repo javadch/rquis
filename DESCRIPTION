@@ -1,13 +1,13 @@
-Package: RQt
-Version: 0.1.0
-Title: R Interface to XQt Language for Unified Data Processing
+Package: RQUIS
+Version: 0.4.0
+Title: R Interface to the QUIS Language for Unified Data Processing
 Authors@R: c(
     person("Javad", "Chamanara", email = "chamanara@gmail.com", role = c("aut", "cre")),
     person("Clayton", "Yochum", email = "claytonjy@gmail.com", role = c("aut")),
     person("Ellis", "Valentiner", email = "ellis.valentiner@gmail.com", role = c("aut")))
-Description: This package provides a way to use the XQt language from within R.
-URL: https://github.com/javadch/RQt
-BugReports: https://github.com/javadch/RQt/issues
+Description: This package provides a way to use the QUIS language from within R.
+URL: https://github.com/javadch/rquis
+BugReports: https://github.com/javadch/rquis/issues
 License: LGPL-3
 Depends:
     R (>= 3.2.0)
