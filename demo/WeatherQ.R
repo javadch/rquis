@@ -11,8 +11,9 @@ ld <- quis.loadProcess(engine, file)
 rn <- quis.runProcess(engine)
 err <- quis.getRunReport(engine)
 
-fsoData <- quis.getVariable(engine, "meanDailyTemp")
+data <- quis.getVariable(engine, "meanDailyTemp")
+schema <- quis.getVariableSchema(engine, "meanDailyTemp")
 
-ggplot(fsoData, aes(dayindex, meantemp)) + geom_line() +
- xlab("") + ylab("Mean Temp deg C") +
+ggplot(data, aes(dayindex, meantemp)) + geom_line() +
+ xlab("") + ylab("Mean Temperature C°") +
   ggtitle("2014 Average Daily Temperature at SFO")
