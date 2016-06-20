@@ -45,10 +45,10 @@ ENV JDK_HOME /usr/lib/jvm/java-8-oracle
 RUN export JDK_HOME
 RUN R -e 'version'
 #RUN R -e 'installed.packages()'
-#RUN R -e 'remove.packages("RQt")'
-RUN R -e 'devtools::install_github("JavadCh/RQt", ref="develop", "force=TRUE")'
-#RUN R -e 'library(RQt)'
+#RUN R -e 'remove.packages("RQUIS")'
+RUN R -e 'devtools::install_github("JavadCh/RQUIS", ref="dev", "force=TRUE")'
+#RUN R -e 'library(RQUIS)'
 #RUN R -e 'rqt.versionInfo()'
-#RUN R -r 'demo(package ="RQt", RQtTest2)'
+#RUN R -r 'demo(package ="RQUIS", Test1)'
 
 
