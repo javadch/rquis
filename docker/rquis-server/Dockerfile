@@ -34,6 +34,9 @@ RUN echo 'deb http://cloud.r-project.org/bin/linux/ubuntu trusty/' | tee -a /etc
 RUN  apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E084DAB9
 RUN apt-get update && apt-get install -y r-base
 
+RUN su - -c "R -e \"install.packages('DBI')\""
+RUN su - -c "R -e \"install.packages('RPostgreSQL')\""
+
 RUN su - -c "R -e \"install.packages('rJava', repos = 'http://cran.rstudio.com/')\""
 RUN su - -c "R -e \"install.packages('devtools', repos = 'http://cran.rstudio.com/')\""
 
