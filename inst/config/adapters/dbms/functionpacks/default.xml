@@ -5,7 +5,7 @@
             <Implementation modifier="instance" dialect="default" nativeCode="count"/>
         </Implementations>
         <Parameters>
-            <Parameter name="expr" permittedDataTypes="Boolean|Byte|String|Integer|Long|Real|Date"/>  
+            <Parameter name="expr" permittedDataTypes="Real|Long|Integer|Byte|String|Boolean|Date"/>  
         </Parameters>
         <!-- Add constarints to the parameters, and the return value. like pre/ post conditions-->     
         <!--The default java code of the function, a single chain of function calls, preferably one function.--> 
@@ -15,7 +15,7 @@
             <Implementation modifier="instance" dialect="default" nativeCode="sum" />
         </Implementations>
         <Parameters>
-            <Parameter name="expr" permittedDataTypes="Byte|Integer|Long|Real"/>
+            <Parameter name="expr" permittedDataTypes="Real|Long|Integer|Byte"/>
         </Parameters>
     </Function>
     <Function appliesTo="column" name="avg" returnType="Real">
@@ -23,7 +23,7 @@
             <Implementation modifier="instance" dialect="default" nativeCode="avg" />
         </Implementations>
         <Parameters>
-            <Parameter name="expr" permittedDataTypes="Byte|Integer|Long|Real"/>
+            <Parameter name="expr" permittedDataTypes="Real|Long|Integer|Byte"/>
         </Parameters>
     </Function>
     <Function appliesTo="column" name="min" returnType="Real">
@@ -31,7 +31,7 @@
             <Implementation modifier="instance" dialect="default" nativeCode="min" />
         </Implementations>
         <Parameters>
-            <Parameter name="expr" permittedDataTypes="Byte|Integer|Long|Real"/>
+            <Parameter name="expr" permittedDataTypes="Real|Long|Integer|Byte"/>
         </Parameters>
     </Function>
     <Function appliesTo="column" name="max" returnType="Real">
@@ -39,7 +39,7 @@
             <Implementation modifier="instance" dialect="default" nativeCode="max" />
         </Implementations>
         <Parameters>
-            <Parameter name="expr" permittedDataTypes="Byte|Integer|Long|Real"/>
+            <Parameter name="expr" permittedDataTypes="Real|Long|Integer|Byte"/>
         </Parameters>
     </Function>
     <Function appliesTo="column" name="stdev" returnType="Real">
@@ -49,7 +49,7 @@
             <Implementation modifier="instance" dialect="MySQL" nativeCode="std" />
         </Implementations>
         <Parameters>
-            <Parameter name="expr" permittedDataTypes="Byte|Integer|Long|Real"/>
+            <Parameter name="expr" permittedDataTypes="Real|Long|Integer|Byte"/>
         </Parameters>
     </Function>
 </Functions>
