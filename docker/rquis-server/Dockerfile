@@ -8,6 +8,44 @@ RUN apt-get update && apt-get install -y software-properties-common
 ENV LANG en_US.UTF-8 
 RUN locale-gen $LANG d
 
+# Create a list of users as the test subjects
+# for each user copy the test data into /home/data
+# the data is the csv, the excel, the survey, the connection string to the DB, etc.
+
+RUN useradd -ms /bin/bash user1
+USER user1
+# set password
+WORKDIR /home/user1
+# copy...
+COPY /data/airports.csv /home/user1/data/airports.csv
+COPY /data/airportLocations.xlsx /home/user1/data/airportLocations.xlsx
+
+RUN useradd -ms /bin/bash user2
+RUN useradd -ms /bin/bash user3
+RUN useradd -ms /bin/bash user4
+RUN useradd -ms /bin/bash user5
+RUN useradd -ms /bin/bash user6
+RUN useradd -ms /bin/bash user7
+RUN useradd -ms /bin/bash user8
+RUN useradd -ms /bin/bash user9
+RUN useradd -ms /bin/bash user10
+
+RUN useradd -ms /bin/bash user11
+RUN useradd -ms /bin/bash user12
+RUN useradd -ms /bin/bash user13
+RUN useradd -ms /bin/bash user14
+RUN useradd -ms /bin/bash user15
+RUN useradd -ms /bin/bash user16
+RUN useradd -ms /bin/bash user17
+RUN useradd -ms /bin/bash user18
+RUN useradd -ms /bin/bash user19
+RUN useradd -ms /bin/bash user20
+
+
+#switch back to the root user
+USER root
+
+
 # Setup the JDK 8 repo 
 
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
