@@ -68,7 +68,7 @@ RUN	addgroup user1 staff
 
 
 # Install OpenJDK 8 
-sudo apt-get install default-jdk
+RUN apt-get install default-jdk
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
 RUN export JAVA_HOME
 
