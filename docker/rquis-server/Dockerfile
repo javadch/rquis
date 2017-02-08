@@ -68,7 +68,7 @@ RUN	addgroup user1 staff
 
 
 # Install OpenJDK 8 
-RUN apt-get install default-jdk
+RUN apt-get install -y openjdk-8*
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
 RUN export JAVA_HOME
 
@@ -89,7 +89,7 @@ RUN apt-get update && apt-get install -y r-base
 
 RUN su - -c "R -e \"install.packages('DBI')\""
 RUN su - -c "R -e \"install.packages('RPostgreSQL')\""
-RUN  	apt-get install r-cran-rjava
+RUN  	apt-get install -y r-cran-rjava
 RUN su - -c "R -e \"install.packages('devtools', repos = 'http://cran.rstudio.com/')\""
 
 # Install rquis package using devtools
