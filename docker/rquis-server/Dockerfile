@@ -1,4 +1,5 @@
-FROM rocker/rstudio 
+#FROM rocker/rstudio 
+FROM rocker/rstudio-stable:3.3.2
 # FROM cardcorp/r-java
 
 MAINTAINER Javad Chamanara <chamanara@mail.com> 
@@ -83,9 +84,10 @@ RUN export JDK_HOME
 # RUN java -version
 
 # SET R CRAN repo
-RUN echo 'deb http://cloud.r-project.org/bin/linux/ubuntu trusty/' | tee -a /etc/apt/sources.list.d/r.list
-RUN  apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E084DAB9
-RUN apt-get update && apt-get install -y r-base
+#RUN echo 'deb http://cloud.r-project.org/bin/linux/ubuntu trusty/' | tee -a /etc/apt/sources.list.d/r.list
+##xenial
+#RUN  apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E084DAB9
+#RUN apt-get update && apt-get install -y r-base
 
 RUN su - -c "R -e \"install.packages('DBI')\""
 RUN su - -c "R -e \"install.packages('RPostgreSQL')\""
