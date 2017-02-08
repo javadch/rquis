@@ -48,21 +48,27 @@ USER root
 
 # Setup the JDK 8 repo 
 
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
-RUN apt-add-repository ppa:webupd8team/java
 
-# Install java8 
-RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections 
-RUN apt-get update && apt-get install -y oracle-java8-installer && apt-get install -y oracle-java8-set-default
+# Install Oracle Java 8 
+#RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
+#RUN apt-add-repository ppa:webupd8team/java
+#RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections 
+#RUN apt-get update && apt-get install -y oracle-java8-installer && apt-get install -y oracle-java8-set-default
+#ENV JAVA_HOME /usr/lib/jvm/java-8-oracle/ 
+#RUN export JAVA_HOME
 
-# Setup JAVA_HOME, this is useful for docker commandline
 
-#RUN apt-get install -y oracle-java8-set-default
-ENV JAVA_HOME /usr/lib/jvm/java-8-oracle/ 
+# Install OpenJDK 8 
+sudo apt-get install default-jdk
+ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64/
 RUN export JAVA_HOME
 
 # Set the link for rJava and other applications that may need the default Java
-RUN ln -s /usr/lib/jvm/java-8-oracle /usr/lib/jvm/default-java
+RUN ln -s JAVA_HOME /usr/lib/jvm/default-java
+
+# Used by RQUIS 
+ENV JDK_HOME JAVA_HOME
+RUN export JDK_HOME
 
 # Show java version (for debugging) 
 # RUN java -version
@@ -82,8 +88,6 @@ RUN su - -c "R -e \"install.packages('devtools', repos = 'http://cran.rstudio.co
 RUN R -e 'library(devtools)'
 RUN R -e 'library(rJava)'
 
-ENV JDK_HOME /usr/lib/jvm/java-8-oracle
-RUN export JDK_HOME
 RUN R -e 'version'
 #RUN R -e 'installed.packages()'
 #RUN R -e 'remove.packages("RQUIS")'
