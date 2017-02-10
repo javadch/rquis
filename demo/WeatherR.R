@@ -11,5 +11,5 @@ meanTemp <- ddply(w2014, .(shortdate), summarize, mean_T=mean(TemperatureC)) # c
 meanTemp$shortdate <- as.Date(meanTemp$shortdate,format="%m-%d") # set the date column for the meanTemp array
 
 ggplot(meanTemp, aes(shortdate, mean_T)) + geom_line() +
-  scale_x_date(labels=date_format("%m/%d")) + xlab("") + ylab("Mean Temp deg C") +
+  scale_x_date(labels=date_format("%m/%d")) + xlab("") + ylab("Mean Temperature C") +
   ggtitle("2014 Average Daily Temperature at SFO")
