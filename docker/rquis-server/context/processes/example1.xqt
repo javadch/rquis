@@ -1,0 +1,4 @@
+CONNECTION cnn1 ADAPTER=CSV SOURCE_URI='data/' PARAMETERS=delimiter:comma, fileExtension:csv, firstRowIsHeader:true
+BIND b1 CONNECTION=cnn1 SCOPE=airports
+
+SELECT FROM b1.0 INTO airportsData
