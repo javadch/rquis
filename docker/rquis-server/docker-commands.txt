@@ -1,24 +1,58 @@
-docker build -t rquis-server .
+// attach to a running docker container and then add users, etc
+sudo docker exec -i -t 665b4a1e17b6 /bin/bash // get the id by sudo docker ps
 
-docker images
+// add users
+useradd user25
+echo "user25:pass25" | chpasswd 
+rm -rf /home/user25
+mkdir  /home/user25
+chown user25:user25 /home/user25
+addgroup user25 staff
 
+// list groups
+getent group
+
+//list users
+getent passwd
+
+//chnage password
+passwd username
+
+// groups:
+groups
+groups user1
+usermod -a -G groupName userName // add to group
+
+
+sudo docker build -t rquis-server .
 sudo docker run rquis-server
-
 sudo docker run -d -p 8787:8787 rquis-server
-
 sudo docker run -i -t rquis-server /bin/bash
-
 sudo docker rmi rquis-server
+
+
+sudo docker build -t javadch/rquis/server .
+sudo docker run javadch/rquis/server
+sudo docker run -d -p 8787:8787 javadch/rquis/server
+sudo docker run -i -t javadch/rquis/server /bin/bash
+sudo docker rmi javadch/rquis/server
+
+sudo docker images
+
 
 docker info
 
 docker ps
 
-# removes all containers
-sudo docker rm $(docker ps -aq)
 
 # removes all dangling images
-docker rmi $(docker images -f "dangling=true" -q)
+sudo docker rmi $(sudo docker images -f "dangling=true" -q)
+sudo docker rmi $(sudo docker images -q)
 
-# stops a container
-docker stop da7116620319
+# removes all containers
+sudo docker rm $(sudo docker ps -aq)
+
+# stop containers
+sudo docker stop $(sudo docker ps -aq)
+sudo docker stop 7116620319
+
