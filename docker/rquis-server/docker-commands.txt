@@ -31,11 +31,11 @@ sudo docker run -i -t rquis-server /bin/bash
 sudo docker rmi rquis-server
 
 
-sudo docker build -t javadch/rquis/server .
-sudo docker run javadch/rquis/server
-sudo docker run -d -p 8787:8787 javadch/rquis/server
-sudo docker run -i -t javadch/rquis/server /bin/bash
-sudo docker rmi javadch/rquis/server
+sudo docker build -t javadch/rquis/server:0.4.1 .
+sudo docker run javadch/rquis/server:0.4.1
+sudo docker run -d -p 8787:8787 javadch/rquis/server:0.4.1
+sudo docker run -i -t javadch/rquis/server:0.4.1 /bin/bash
+sudo docker rmi javadch/rquis/server:0.4.1
 
 sudo docker images
 
@@ -60,10 +60,19 @@ sudo docker stop 7116620319
 sudo docker save -o rqs_041.tar javadch/rquis/server:0.4.1
 
 # load am image from local disk
-docker load --input qs_041.tar
+docker load --input rqs_041.tar
 
 # transfer an image to a remote machine
 
 
 # save, transfer, load at once
+sudo docker save javadch/rquis/server:0.4.1 | bzip2 | pv | ssh ubuntu@idiv-tmp.inf-bb.uni-jena.de 'bunzip2 | sudo docker load'
+
+sudo docker save javadch/rquis/server:0.4.1 | sudo docker $(idiv-tmp.inf-bb.uni-jena.de) load
+
+
+docker-machine scp /home/javadch/projects/phd/src/Docker/rquis/rqs_041.tar idiv-tmp.inf-bb.uni-jena.de:/home/ubuntu
+docker-machine ssh idiv-tmp.inf-bb.uni-jena.de sudo docker load -i rqs_041.tar
+
+# use github: push dockerfile and needed data to DEV, pull on target machine, build and run.
 
