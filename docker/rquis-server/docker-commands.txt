@@ -56,3 +56,14 @@ sudo docker rm $(sudo docker ps -aq)
 sudo docker stop $(sudo docker ps -aq)
 sudo docker stop 7116620319
 
+# save an image to locall disk
+sudo docker save -o rqs_041.tar javadch/rquis/server:0.4.1
+
+# load am image from local disk
+docker load --input qs_041.tar
+
+# transfer an image to a remote machine
+
+
+# save, transfer, load at once
+
